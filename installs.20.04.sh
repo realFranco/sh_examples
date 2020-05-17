@@ -18,23 +18,30 @@
 # Change execution owner for a .sh files
 # sudo chmod +x file.sh && ./file.sh
 
+
 sudo apt-get update
 sudo apt-get upgrade
+
 
 # Enable the Universe repository
 sudo add-apt-repository universe
 
+
 # curl
 sudo apt install curl
+
 
 # chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
+
 # vivaldi
 wget https://downloads.vivaldi.com/stable/vivaldi-stable_3.0.1874.38-1_amd64.deb
 
+
 # xtreme download manager
 # https://subhra74.github.io/xdm/
+
 
 # visual paradimg
 # https://www.visual-paradigm.com/download/community.jsp?platform=linux&arch=64bit
@@ -88,7 +95,7 @@ sudo apt-get update
 apt-get install postgresql-12
 
 sudo -u postgres psql postgres
-sudo -u postgres psql sa_cms_db
+sudo -u postgres psql db
 
 
 # aws
@@ -183,4 +190,3 @@ sudo service apache2 stop | start
 # php-fpm, which stands for “PHP fastCGI process manager”, and 
 # tell Nginx to pass PHP requests to this software for processing
 sudo apt install php-fpm
-
