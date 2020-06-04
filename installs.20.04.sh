@@ -17,6 +17,9 @@
 #
 # Change execution owner for a .sh files
 # sudo chmod +x file.sh && ./file.sh
+#
+# Check os version
+# cat /etc/os-release
 
 
 sudo apt-get update
@@ -66,7 +69,8 @@ sudo apt install git-all
 
 # ipython
 pip install ipython
-
+# or
+pip3 install ipython
 
 # vs code
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -88,14 +92,20 @@ sudo cat  /etc/apt/sources.list.d/pgdg.list
 
 # add this unique line inside of that new file (xenial or the actual distro)
 deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main
+# change 'xenial' for 'bionic' in case that your are on ubuntu 18.04
 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
 
-apt-get install postgresql-12
+sudo apt-get install postgresql-12
 
+# for create user 
+# https://www.postgresql.org/docs/current/sql-createuser.html
+#
 sudo -u postgres psql postgres
 sudo -u postgres psql db
+#
+# \c postgres user_name
 
 
 # aws
@@ -123,6 +133,13 @@ sudo apt-get install -y nodejs
 
 # postman
 https://www.postman.com/downloads/
+# Add it into a Short cut:
+#
+# Add create a new shortcut
+# Shortcut Ctrl + P
+# Run: ./app/Postman
+#
+# Before add the shortcut, make sure the command work
 
 
 # off-topic
@@ -152,11 +169,12 @@ https://github.com/NLKNguyen/papercolor-theme
 
 
 # colors on terrminal
-> https://github.com/NLKNguyen/papercolor-theme
+# https://github.com/NLKNguyen/papercolor-theme
 
 
 # docker
-> https://docs.docker.com/get-started/
+# https://docs.docker.com/get-started/
+#
 sudo apt install docker.io
 
 
@@ -174,6 +192,7 @@ sudo pip3 install protonvpn-cli
 # nginx
 sudo apt install nginx
 
+
 # uncomplicated firewall
 sudo ufw allow 'Nginx HTTP'
 sudo ufw status
@@ -190,3 +209,4 @@ sudo service apache2 stop | start
 # php-fpm, which stands for “PHP fastCGI process manager”, and 
 # tell Nginx to pass PHP requests to this software for processing
 sudo apt install php-fpm
+
