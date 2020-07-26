@@ -65,12 +65,15 @@ pip3 install --upgrade pip
 # git
 sudo apt install git-all
 # add the configuration from the first initial use
+# ref https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+git config --global user.name "name"
+git config --global user.email johndoe@example.com
 
 
 # ipython
-pip install ipython
-# or
 pip3 install ipython
+# or
+pip install ipython
 
 # vs code
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -99,14 +102,22 @@ sudo apt-get update
 
 sudo apt-get install postgresql-12
 
+# In case of install psycopg (python <-> pg ) driver
+sudo apt install libpq-dev
+
 # for create user 
 # https://www.postgresql.org/docs/current/sql-createuser.html
 #
 sudo -u postgres psql postgres
 sudo -u postgres psql db
 #
-# \c postgres user_name
-
+# create user 
+# CREATE USER user_name WITH CREATEDB PASSWORD 'password'
+# to connect 
+psql -d postgres -U usar_name -h localhost
+or 
+# in the same of session of the postgres cli
+\c postgres user_name
 
 # aws
 sudo apt-get install python3-pip
@@ -130,6 +141,8 @@ https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
+
+# yarn
 
 # postman
 https://www.postman.com/downloads/
@@ -176,6 +189,7 @@ https://github.com/NLKNguyen/papercolor-theme
 # https://docs.docker.com/get-started/
 #
 sudo apt install docker.io
+sudo apt install docker-compose
 
 
 # flameshot
