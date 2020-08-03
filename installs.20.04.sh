@@ -143,6 +143,7 @@ sudo apt-get install -y nodejs
 
 
 # yarn
+https://classic.yarnpkg.com/en/docs/install/#debian-stable
 
 # postman
 https://www.postman.com/downloads/
@@ -224,3 +225,24 @@ sudo service apache2 stop | start
 # tell Nginx to pass PHP requests to this software for processing
 sudo apt install php-fpm
 
+
+# installing a tp-link wireless usb driver
+
+# Ref:
+# > https://askubuntu.com/questions/1047832/tp-link-tl-wn725n-driver-for-18-04-version
+
+cat /proc/version
+# Linux version 5.4.0-42-generic (buildd@lgw01-amd64-038) 
+# (gcc version 9.3.0 (Ubuntu 9.3.0-10ubuntu2)) 
+# #46-Ubuntu SMP Fri Jul 10 00:24:02 UTC 2020
+
+sudo apt-get update
+sudo apt-get install -y linux-headers-$(uname -r) build-essential git
+git clone https://github.com/lwfinger/rtl8188eu
+cd rtl8188eu
+make all
+sudo make install
+sudo insmod 8188eu.ko
+
+# Check if the driver is installed
+lsmod | grep 8188
