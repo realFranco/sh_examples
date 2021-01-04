@@ -90,19 +90,22 @@ sudo snap install --classic code # or code-insiders
 
 # postgresql
 # It is already addit in ubuntu dist
-sudo cat  /etc/apt/sources.list.d/pgdg.list
-# add the next line 'deb htt...' into that file aboce, save & close
+sudo nano  /etc/apt/sources.list.d/pgdg.list
+# add the next line 'deb htt...' into that file above, save & close
 
 # add this unique line inside of that new file (xenial or the actual distro)
 deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main
 # change 'xenial' for 'bionic' in case that your are on ubuntu 18.04
 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+# Wait for the 'OK' message
+
 sudo apt-get update
 
 sudo apt-get install postgresql-12
 
-# In case of install psycopg (python <-> pg ) driver
+# In case of install psycopg (python <-> pg) driver
 sudo apt install libpq-dev
 
 # for create user 
@@ -112,9 +115,9 @@ sudo -u postgres psql postgres
 sudo -u postgres psql db
 #
 # create user 
-# CREATE USER user_name WITH CREATEDB PASSWORD 'password'
+# CREATE USER user_name WITH CREATEDB PASSWORD 'password';
 # to connect 
-psql -d postgres -U usar_name -h localhost
+psql -d postgres -U user_name -h localhost
 or 
 # in the same of session of the postgres cli
 \c postgres user_name
@@ -195,6 +198,18 @@ sudo apt install docker-compose
 
 # flameshot
 sudo apt install flameshot
+# To set flamshot GUI into a Print keyboard shortcut:
+
+# Open the bash and execute the next command
+# To disable the current print activity
+> gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '[]'
+
+# Then Go to Settings -> Keyboard and Shortcuts -> Drive the bottom of the window
+# Create a new Shortcut, the command of the shorcut will be 
+> flamshot gui 
+
+# At the end set the key of the keyboard to "execute" that command, in this
+# case is the keyboard "Print".
 
 
 # proton vpn
