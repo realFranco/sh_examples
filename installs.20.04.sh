@@ -254,10 +254,39 @@ cat /proc/version
 sudo apt-get update
 sudo apt-get install -y linux-headers-$(uname -r) build-essential git
 git clone https://github.com/lwfinger/rtl8188eu
+# git clone https://github.com/realFranco/rtl8188eu
 cd rtl8188eu
+# Copy the content from rtl8188... into rtl2 to avoid the download process 
+# cd rtl2/
 make all
 sudo make install
 sudo insmod 8188eu.ko
+# sudo make install && sudo insmod 8188eu.ko
 
 # Check if the driver is installed
 lsmod | grep 8188
+
+# I have the mother board jack port f**ck up.
+# So I am using SounWire to pass the audio from my pc thorugh my Android phone.
+# I have to install some stuff before run SounWire on Ubuntu
+
+# REF: https://www.linux.com/topic/desktop/how-stream-audio-your-linux-pc-android/
+> sudo apt-get install libportaudio2
+
+# Downloading SoundWire
+# Go to http://georgielabs.net
+# Download the correct software for the current OS (Linux x64 for my case).
+# On linux, decompress the folder
+# Access to the recent folder decompressed
+./SoundWireServer
+
+# If some error appears, enable the ports 59010 & 59011 as UDP
+> sudo ufw status verbose
+> sudo ufw allow 59010/udp
+> sudo ufw allow 59011/udp
+
+# Ig not sound detected go to
+# Ref: https://unix.stackexchange.com/questions/172066/soundwire-streaming-but-no-sound
+
+# Follow this url to find a more easy steps to make it works
+# REF: http://electronics4ubeginners.blogspot.com/2019/02/blog-post.html
