@@ -263,6 +263,17 @@ sudo make install
 sudo insmod 8188eu.ko
 # sudo make install && sudo insmod 8188eu.ko
 
+# To reinstall the wifi drivers, follow the next steps
+# instance a bash inside of the parent folder
+rm -r -f rtl8188eu
+mkdir rtl8188eu
+cd rtl8188eu_copy
+cp -r . ../rtl8188eu
+cd ../rtl8188eu
+make all
+sudo make install
+sudo insmod 8188eu.ko
+
 # Check if the driver is installed
 lsmod | grep 8188
 
