@@ -301,3 +301,6 @@ lsmod | grep 8188
 
 # Follow this url to find a more easy steps to make it works
 # REF: http://electronics4ubeginners.blogspot.com/2019/02/blog-post.html
+
+# Install Golang
+# REF: https://go.dev/doc/install
