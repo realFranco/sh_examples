@@ -198,13 +198,16 @@ sudo apt install docker-compose
 
 # flameshot
 sudo apt install flameshot
+# or using snapcraft
+sudo snap install flameshot
+
 # To set flamshot GUI into a Print keyboard shortcut:
 
 # Open the bash and execute the next command
 # To disable the current print activity
 > gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '[]'
 
-# Then Go to Settings -> Keyboard and Shortcuts -> Drive the bottom of the window
+# Then Go to Settings -> Keyboard and Shortcuts -> Drive to the bottom of the window
 # Create a new Shortcut, the command of the shorcut will be 
 > flamshot gui 
 
