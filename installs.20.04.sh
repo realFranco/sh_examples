@@ -209,7 +209,7 @@ sudo snap install flameshot
 
 # Then Go to Settings -> Keyboard and Shortcuts -> Drive to the bottom of the window
 # Create a new Shortcut, the command of the shorcut will be 
-> flamshot gui 
+> flameshot gui 
 
 # At the end set the key of the keyboard to "execute" that command, in this
 # case is the keyboard "Print".
