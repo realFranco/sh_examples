@@ -17,10 +17,12 @@
 #
 # Change execution owner for a .sh files
 # sudo chmod +x file.sh && ./file.sh
-#
-# Check os version
-# cat /etc/os-release
 
+# Check os version
+> cat /etc/os-release
+
+# Know the current distribution of the Ubuntu instaled
+> lsb_release -a
 
 sudo apt-get update
 sudo apt-get upgrade
