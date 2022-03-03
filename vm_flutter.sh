@@ -23,6 +23,10 @@ sudo apt install virtualbox-6.1
 # If the previous command does not work, use this instead
 sudo apt install virtualbox
 
+# Installar ssh server
+# REF: https://linuxhint.com/fix_connection_refused_ubuntu/
+sudo apt install openssh-server
+
 # Installing Flutter
 # REF: https://docs.flutter.dev/get-started/install
 # REF: https://docs.flutter.dev/get-started/install/linux#install-flutter-manually
