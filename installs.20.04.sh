@@ -200,18 +200,15 @@ sudo apt install docker-compose
 
 # flameshot
 sudo apt install flameshot
-# or using snapcraft
-sudo snap install flameshot
-
 # To set flamshot GUI into a Print keyboard shortcut:
 
 # Open the bash and execute the next command
 # To disable the current print activity
 > gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '[]'
 
-# Then Go to Settings -> Keyboard and Shortcuts -> Drive to the bottom of the window
+# Then Go to Settings -> Keyboard and Shortcuts -> Drive the bottom of the window
 # Create a new Shortcut, the command of the shorcut will be 
-> flameshot gui 
+> flamshot gui 
 
 # At the end set the key of the keyboard to "execute" that command, in this
 # case is the keyboard "Print".
@@ -269,13 +266,15 @@ sudo insmod 8188eu.ko
 # sudo make install && sudo insmod 8188eu.ko
 
 # To reinstall the wifi drivers, follow the next steps
-# instance a bash inside of the parent folder
+# instance a bash inside of the parent folder (Docuemts/Dev in my case)
 rm -r -f rtl8188eu
 mkdir rtl8188eu
 cd rtl8188eu_copy
 cp -r . ../rtl8188eu
 cd ../rtl8188eu
 make all
+# compilation of the commands
+rm -r -f rtl8188eu &&  mkdir rtl8188eu && cd rtl8188eu_copy && cp -r . ../rtl8188eu && cd ../rtl8188eu && make all
 sudo make install
 sudo insmod 8188eu.ko
 
@@ -307,5 +306,7 @@ lsmod | grep 8188
 # Follow this url to find a more easy steps to make it works
 # REF: http://electronics4ubeginners.blogspot.com/2019/02/blog-post.html
 
-# Install Golang
-# REF: https://go.dev/doc/install
+# Script para limpiar el journal
+# Levanto la credencial super user antes de iniciar el proceso de eliminacion
+sudo date
+cd /var/log && sudo rm -f *.gz && sudo rm -f *.log.* && cd postgresql && sudo rm -f *.log.* && cd /var/log/journal/af10683c72d448ce8374dcaee642a15f && sudo rm -f *@*
