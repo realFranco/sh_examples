@@ -197,6 +197,12 @@ https://github.com/NLKNguyen/papercolor-theme
 sudo apt install docker.io
 sudo apt install docker-compose
 
+# To execute docker commands as non sudo
+# REF: https://docs.docker.com/engine/install/linux-postinstall
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+docker run hello-world  # TEST
 
 # flameshot
 sudo apt install flameshot
@@ -310,3 +316,7 @@ lsmod | grep 8188
 # Levanto la credencial super user antes de iniciar el proceso de eliminacion
 sudo date
 cd /var/log && sudo rm -f *.gz && sudo rm -f *.log.* && cd postgresql && sudo rm -f *.log.* && cd /var/log/journal/af10683c72d448ce8374dcaee642a15f && sudo rm -f *@*
+
+# Remove packeges no longer need it
+# Will remove content from the folder /var/cache/apt/archives | /var/cache/apt/archives/partial
+sudo apt-get clean
