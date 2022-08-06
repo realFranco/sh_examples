@@ -320,3 +320,7 @@ cd /var/log && sudo rm -f *.gz && sudo rm -f *.log.* && cd postgresql && sudo rm
 # Remove packeges no longer need it
 # Will remove content from the folder /var/cache/apt/archives | /var/cache/apt/archives/partial
 sudo apt-get clean
+
+# Required to play videos at some web browser
+sudo apt install ffmpeg
+
