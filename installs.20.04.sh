@@ -204,6 +204,13 @@ sudo usermod -aG docker $USER
 newgrp docker
 docker run hello-world  # TEST
 
+# Change the docker root volumen in the host machine
+# Usefull when you /var partition is small
+> https://gist.github.com/realFranco/36d2245295fabc9a56c5f8c870d8cef0#file-docker-change-data-root-sh
+
+# Upgrade docker-compse version
+> https://gist.github.com/realFranco/ceec5d106420715534767a66ad66dab2#file-docker-compse-upgrade-minor-version-sh
+
 # flameshot
 sudo apt install flameshot
 # To set flamshot GUI into a Print keyboard shortcut:
