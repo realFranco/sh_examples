@@ -211,6 +211,9 @@ docker run hello-world  # TEST
 # Upgrade docker-compse version
 > https://gist.github.com/realFranco/ceec5d106420715534767a66ad66dab2#file-docker-compse-upgrade-minor-version-sh
 
+# Upgrade the docker compose version
+> https://gist.github.com/realFranco/3ee71679509318462f062c61bc960ea8
+
 # flameshot
 sudo apt install flameshot
 # To set flamshot GUI into a Print keyboard shortcut:
